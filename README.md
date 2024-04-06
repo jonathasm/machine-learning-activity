@@ -43,7 +43,45 @@ A biblioteca scikit-learn também fornece a classe SimpleImputer para imputaçã
 
 ### 4. O que é uma matriz de confusão e como ela é usada para avaliar o desempenho de um modelo preditivo?
 
+Uma matriz de confusão é uma tabela que é usada para descrever o desempenho de um modelo em um conjunto de dados para o
+qual os valores verdadeiros são conhecidos.
+
+Ela fornece uma visão detalhada de como o modelo está performando, permitindo identificar falhas e áreas de
+aprimoramento
+
+Uma possível interpretação da Matriz:
+
+- Uma alta diagonal (TP e TN) indica um bom desempenho geral do modelo.
+- Valores altos na diagonal principal e baixos nas outras células indicam boa precisão e revocação.
+- Valores altos em FP e FN indicam áreas de possível aprimoramento do modelo.
+- Modelo com alta precisão: O modelo raramente classifica instâncias como positivas incorretamente, mas pode estar
+  falhando em identificar algumas instâncias positivas reais (FN).
+- Modelo com alta revocação: O modelo identifica a maioria das instâncias positivas reais, mas pode estar classificando
+  algumas instâncias negativas como positivas incorretamente (FP).
+
+A matriz é composta por quatro valores diferentes:
+
+- **Verdadeiros Positivos (TP)**: Os casos em que o modelo previu corretamente a classe positiva.
+- **Verdadeiros Negativos (TN)**: Os casos em que o modelo previu corretamente a classe negativa.
+- **Falsos Positivos (FP)**: Os casos em que o modelo previu incorretamente a classe positiva.
+- **Falsos Negativos (FN)**: Os casos em que o modelo previu incorretamente a classe negativa.
+
+A partir desses quatro valores, podemos calcular várias métricas de desempenho, como precisão, recall, F1-score e
+AUC-ROC.
+
+- **Precisão**: É a proporção de previsões positivas que foram corretas. É calculada como TP / (TP + FP).
+- **Recall (Sensibilidade)**: É a proporção de valores positivos reais que foram corretamente classificados. É calculada
+  como TP / (TP + FN).
+- **F1-Score**: É a média harmônica de precisão e recall. É calculada como 2 * (Precisão * Recall) / (Precisão +
+  Recall).
+- **AUC-ROC**: É a área sob a curva ROC (Receiver Operating Characteristic). A curva ROC é um gráfico que mostra o
+  desempenho de um modelo de classificação em todos os limiares de classificação.
+
 ### 5. Em quais áreas (tais como construção civil, agricultura, saúde, manufatura, entre outras) você acha mais interessante aplicar algoritmos de machine learning?
+
+Varejo: Para recomendação de produtos, previsão de demanda, otimização de preços, etc.
+
+Finanças: Para detecção de fraudes, previsão de preços de ações, análise de crédito, etc.
 
 ## ATIVIDADE 2
 
