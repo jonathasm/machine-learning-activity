@@ -87,9 +87,26 @@ Finanças: Para detecção de fraudes, previsão de preços de ações, análise
 
 ### 1. Escreva uma função que receba uma lista de números e retorne outra lista com os números ímpares.
 
+    def impar_odd_numbers(numbers):         
+        return [num for num in numbers if num % 2 != 0]
+
 ### 2. Escreva uma função que receba uma lista de números e retorne outra lista com os números primos presentes.
 
+    def primo_prime_numbers(numbers):
+        primes = []
+        for num in numbers:
+            if num > 1:
+                for i in range(2, num):
+                    if (num % i) == 0: 
+                        break
+                    else:
+                        primes.append(num)
+        return primes
+
 ### 3. Escreva uma função que receba duas listas e retorne outra lista com os elementos que estão presentes em apenas uma das listas.
+
+    def unique_elements(list1, list2): # Returns the unique and exclusive elements from each list
+        return list(set(list1) ^ set(list2))
 
 ### 4. Dada uma lista de números inteiros, escreva uma função para encontrar o segundo maior valor na lista.
 
