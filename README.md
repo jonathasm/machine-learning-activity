@@ -110,7 +110,13 @@ Finanças: Para detecção de fraudes, previsão de preços de ações, análise
 
 ### 4. Dada uma lista de números inteiros, escreva uma função para encontrar o segundo maior valor na lista.
 
+    def second_largest(numbers):
+        return sorted(set(numbers), reverse=True)[1] if len(set(numbers)) > 1 else None
+
 ### 5. Crie uma função que receba uma lista de tuplas, cada uma contendo o nome e a idade de uma pessoa, e retorne a lista ordenada pelo nome das pessoas em ordem alfabética.
+
+    def sort_by_name(people):
+        return sorted(people, key=lambda person: person[0])
 
 ### 6. Observe os espaços sublinhados e complete o código.
 
@@ -126,6 +132,25 @@ Finanças: Para detecção de fraudes, previsão de preços de ações, análise
     color='darkgrey')
     fig.suptitle('__.subplots()')
 
+___________________________________________________________________________________________________
+
+    import matplotlib.pyplot as plt
+    import numpy as np
+
+    fig, axs = plt.subplots(ncols=2, nrows=2, figsize=(5.5, 3.5), layout="constrained")
+    for row in range(2):
+        for col in range(2):
+            axs[row, col].annotate(
+                        f"axs[{row}, {col}]",
+                        (0.5, 0.5),
+                        transform=axs[row, col].transAxes,
+                        ha="center",
+                        va="center",
+                        fontsize=18,
+                        color="darkgrey",
+            )
+    fig.suptitle("axs.subplots()")
+
 ### 7. Observe os espaços sublinhados e complete o código.
 
     import numpy as np
@@ -136,9 +161,50 @@ Finanças: Para detecção de fraudes, previsão de preços de ações, análise
     __, __ = plt.subplots()
     ax.____(_, _)
 
+---------------------------------------------------------
+
+    import numpy as np
+    import matplotlib as mpl
+    import matplotlib.pyplot as plt
+    
+    x = np.linspace(-2 * np.pi, 2 * np.pi, 100)
+    y = np.sin(x)
+    fig, ax = plt.subplots()
+    ax.plot(x, y)
+
 ### 8. Utilizando pandas, como realizar a leitura de um arquivo CSV em um DataFrame e exibir as primeiras linhas?
+
+    import pandas as pd
+
+    df = pd.read_csv("arquivo.csv")
+
+    print(df.head())
 
 ### 9. Utilizando pandas, como selecionar uma coluna específica e filtrar linhas em um “DataFrame” com base em uma condição?
 
+    coluna = df["nota"]
+    filtro = df[df["nota"] > 6]
+
 ### 10. Utilizando pandas, como lidar com valores ausentes (NaN) em um DataFrame?
+
+    import pandas as pd
+    import numpy as np
+
+    df = pd.DataFrame({
+            "Aluno_A": [7, 6, np.nan, 5],
+            "Aluno_B": [9, np.nan, np.nan, 8],
+            "Aluno_C": [3, 9, 6, 1],
+            })
+
+    df_dropna = df.dropna()
+    df_fillna = df.fillna(0)
+    df_fillna_mean = df.fillna(df.mean())
+    df_interpolate = df.interpolate()
+
+    print(df)
+    print(df_dropna)
+    print(df_fillna)
+    print(df_fillna_mean)
+    print(df_interpolate)
+
 
